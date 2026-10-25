@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nikolle Claire | Portfolio</title>
+<meta name="description" content="Virtual Assistant, Social Media Manager and Canva Designer based in the Philippines, working worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Kaushan+Script&family=Hanken+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f4ee;--deep:#2e4536;--mid:#62756a;--pale:#e0e9da;--line:#c9d4c3}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--deep);font:400 1.05rem/1.6 'Hanken Grotesk',system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+.cond{font-family:'Anton',Impact,sans-serif;text-transform:uppercase;line-height:.95}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h2{font:400 clamp(2.2rem,5vw,3.4rem)/1 'Anton',Impact,sans-serif;text-transform:uppercase;margin-bottom:.7rem}
+h3{font-weight:800}
+.lead{color:var(--mid);max-width:56ch;margin-bottom:2rem}
+.btn{display:inline-block;background:var(--deep);color:#fff;font-weight:800;text-transform:uppercase;padding:1rem 2rem;border-radius:99px;text-decoration:none;border:0;cursor:pointer;font:800 1rem 'Hanken Grotesk';box-shadow:0 10px 24px rgba(46,69,54,.3)}
+/* gate */
+#gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-items:center;padding:1rem;transition:opacity .5s}
+#gate.out{opacity:0;pointer-events:none}
+.gcard{background:var(--pale);border:1px solid var(--line);border-radius:36px;padding:2.5rem 2rem;text-align:center;width:min(680px,100%)}
+.gcard small{letter-spacing:.2em;text-transform:uppercase;color:var(--mid);font-size:.8rem}
+.gcard h1{font-size:clamp(3rem,11vw,6.5rem);margin:.6rem 0 1.4rem}
+.gcard h1 span{color:var(--mid);display:block}
+/* hero */
+.hero{position:relative;min-height:100vh;overflow:hidden}
+.logo{position:absolute;top:1.2rem;left:1.5rem;height:70px;z-index:3}
+.status{position:absolute;top:1.6rem;right:1.5rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;z-index:3}
+.status::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--deep);margin-right:.5rem}
+.big{position:absolute;top:13vh;left:0;right:0;text-align:center;font-size:clamp(4.5rem,19.5vw,17rem);letter-spacing:.01em;background:linear-gradient(to bottom,var(--deep) 25%,rgba(46,69,54,0) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;z-index:1}
+.photo{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:68vh;max-width:90%;z-index:2;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%);mask-image:linear-gradient(to bottom,transparent 0,#000 14%)}
+.intro{position:absolute;left:2.6rem;top:45vh;z-index:3;max-width:260px}
+.intro i{font:400 2.1rem 'Kaushan Script',cursive;display:block;font-style:normal}
+.intro h2{font-family:'Hanken Grotesk';font-weight:800;text-transform:none;font-size:2.8rem;line-height:1.05;margin:0 0 1rem}
+.intro p{color:var(--mid)}
+.roles{position:absolute;right:2rem;bottom:12vh;z-index:3;background:var(--pale);border:1px solid var(--line);border-radius:20px;padding:.9rem 1.2rem;text-align:right;font-weight:800;font-size:1.25rem;line-height:1.3}
+.where{position:absolute;left:2.6rem;bottom:2rem;z-index:3;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+/* content */
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:3rem}
+.work{aspect-ratio:4/3;border-radius:20px;padding:1.1rem;display:flex;align-items:flex-end;font:800 1.15rem/1.15 'Hanken Grotesk';background:var(--pale);border:1px solid var(--line)}
+.work:nth-child(odd){background:var(--deep);color:#fff;border-color:var(--deep)}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;background:var(--pale);border:1px solid var(--line);border-radius:24px;padding:1.5rem;margin-bottom:1.25rem}
+.proj img{width:100%;border-radius:14px;display:block}
+.proj h3{font-size:1.5rem;margin:.2rem 0 .6rem}
+.proj p{color:var(--mid);margin-bottom:.8rem}
+.proj a{font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--pale);border:1px solid var(--line);border-radius:20px;padding:1.4rem}
+.card p{color:var(--mid);font-size:.97rem}
+.card em{display:block;margin-top:.7rem;font-size:.85rem;font-style:normal;font-weight:800}
+.steps{counter-reset:s}
+.step{counter-increment:s;padding:1.2rem;border-left:4px solid var(--deep)}
+.step::before{content:counter(s);font:400 2rem 'Anton'}
+.step p{color:var(--mid);font-size:.97rem}
+.skills h3{font-size:1.1rem;margin:1.4rem 0 .6rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0}
+.tags li{list-style:none;background:var(--pale);border:1px solid var(--line);padding:.35rem .9rem;border-radius:99px;font-size:.93rem}
+.contact{background:var(--deep);color:#fff;border-radius:32px;padding:3rem 2rem;margin-bottom:3rem}
+.contact .lead{color:#fff;opacity:.8}
+.cols{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem}
+.info p{margin-bottom:.9rem}.info span{display:block;opacity:.65;font-size:.85rem}
+form{display:grid;gap:.9rem}
+label{display:grid;gap:.3rem;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;padding:.75rem .9rem;border-radius:12px;border:0;background:#fff;color:var(--deep)}
+textarea{min-height:110px;resize:vertical}
+.contact .btn{background:var(--pale);color:var(--deep);box-shadow:none}
+footer{padding:0 0 2.5rem;color:var(--mid);font-size:.9rem;text-align:center}
+@media(max-width:760px){
+ .proj,.cols{grid-template-columns:1fr}section{padding:3rem 0}
+ .intro{left:1.2rem;top:36vh;max-width:200px}.intro h2{font-size:2.2rem}
+ .roles{right:1rem;bottom:6vh;font-size:1rem}.where{left:1.2rem;bottom:1rem}
+ .photo{height:55vh}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#gate{transition:none}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gcard">
+    <small>Nikolle Claire</small>
+    <h1 class="cond">Enter the <span>Portfolio</span></h1>
+    <button class="btn" id="enter" type="button">Enter the portfolio</button>
+  </div>
+</div>
+
+<header class="hero">
+  <img class="logo" src="logo.png" alt="" onerror="this.remove()">
+  <div class="status">Available for projects</div>
+  <div class="big cond" aria-hidden="true">Portfolio</div>
+  <img class="photo" src="nikolle.png" alt="Nikolle Claire" onerror="this.remove()">
+  <div class="intro">
+    <i>Hey, I’m</i>
+    <h2>Nikolle<br>Claire</h2>
+    <p>Taking on freelance clients and open to long-term roles.</p>
+  </div>
+  <div class="roles">Virtual Assistant<br>Social Media Manager<br>Canva Designer</div>
+  <div class="where">Based in the Philippines<br>Working worldwide</div>
+</header>
+
+<div class="wrap">
+  <section id="works">
+    <h2>Some of my works</h2>
+    <p class="lead">Sample designs and projects.</p>
+    <div class="works">
+      <div class="work">Robot or Human?</div>
+      <div class="work">Ultimate AI Tools</div>
+      <div class="work">Token 2049 Dubai</div>
+      <div class="work">KODE</div>
+      <div class="work">Welcome Japan</div>
+      <div class="work">Seeing Signs</div>
+      <div class="work">Nagbago ang Buhay sa Argentina!</div>
+      <div class="work">Happy Birthday, Lj</div>
+    </div>
+    <article class="proj">
+      <div>
+        <small>Personal project</small>
+        <h3>Automated Sales &amp; Inventory Tracker</h3>
+        <p>An automated system for small business owners to manage daily transactions, monitor stock levels, track expenses and payments, and calculate profits. It includes automatic calculations, sales performance reports, low-stock alerts, and a dashboard.</p>
+        <p><b>Tools:</b> WPS Spreadsheet, Microsoft Excel</p>
+        <a href="https://ap.wps.com/cms/docs/d/cbRaqbhooZsQTPua?platform=pc&refer=copylink" target="_blank" rel="noopener">View project</a>
+      </div>
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/19365527/6ad9ae987992a7.60858145_LaptopBusinessDashboardMockup.png" alt="Laptop showing the sales and inventory dashboard" loading="lazy">
+    </article>
+    <article class="proj">
+      <div>
+        <small>Personal project</small>
+        <h3>Daily Calendar &amp; Planner</h3>
+        <p>A simple, user-friendly calendar and planning tool to organize daily tasks, manage schedules, and keep track of important events and activities.</p>
+        <a href="https://extraordinary-cassata-44d3e3.netlify.app" target="_blank" rel="noopener">Open the planner</a>
+      </div>
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/19365527/6ad9b04d26fbe8.36416928_LifeMonitorBlueCheckmarkIcon.png" alt="Planner app icon with a blue checkmark" loading="lazy">
+    </article>
+  </section>
+
+  <section>
+    <h2>Designs that look good and do their job</h2>
+    <p class="lead">From a single post to a full brand look, I design visuals that make your business easy to recognize and easy to trust.</p>
+    <div class="grid">
+      <div class="card"><h3>Social media graphics</h3><p>Posts, carousels, stories, and covers that keep your feed consistent.</p><em>Canva / Photoshop</em></div>
+      <div class="card"><h3>Branding</h3><p>Logos, color palettes, fonts, and brand kits that match across every platform.</p><em>Logo / Brand kit</em></div>
+      <div class="card"><h3>Digital products</h3><p>Ebooks, workbooks, planners, and templates that are ready to sell or share.</p><em>Ebook / Template</em></div>
+      <div class="card"><h3>Marketing materials</h3><p>Flyers, banners, ads, and presentations for launches and promotions.</p><em>Ads / Print / Slides</em></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>A clear process from brief to final files</h2>
+    <p class="lead">You always know what stage your project is in and what comes next.</p>
+    <div class="grid steps">
+      <div class="step"><h3>Brief</h3><p>You share your goals, audience, and the look you have in mind.</p></div>
+      <div class="step"><h3>Plan</h3><p>We agree on the formats, number of designs, and deadline.</p></div>
+      <div class="step"><h3>Design</h3><p>I create the first drafts using your brand colors and fonts.</p></div>
+      <div class="step"><h3>Review</h3><p>You send feedback and I revise until it feels right.</p></div>
+      <div class="step"><h3>Deliver</h3><p>You receive final files sized for posting or printing.</p></div>
+      <div class="step"><h3>Support</h3><p>I stay available for edits and your next requests.</p></div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>What I bring and the tools I use</h2>
+    <p class="lead">A fresh graduate with a solid foundation, ready to learn your workflow and the tools your business already uses.</p>
+    <h3>Design &amp; Creative</h3>
+    <ul class="tags"><li>Basic Graphic Design</li><li>Brand Consistency</li><li>Layout &amp; Typography</li><li>Template Creation</li></ul>
+    <h3>Social Media &amp; Marketing Support</h3>
+    <ul class="tags"><li>Social Media Planning</li><li>Content Coordination</li><li>Campaign Support</li><li>Community Moderation</li></ul>
+<!-- ===== SOME OF MY WORKS: SLIDESHOWS ===== -->
+<style>
+  .works{background:#f4f2ed;padding:60px 20px 80px}
+  .works-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1100px;margin:0 auto}
+  .sw{position:relative;width:100%;max-width:880px;margin:0 auto;aspect-ratio:16/11;overflow:hidden;font-family:Arial,sans-serif}
+  .sw:hover .ss{animation-play-state:paused}
+  .ss{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;animation:ssf 32s infinite}
+  .ss img{display:block;max-width:100%;max-height:82%;width:auto;height:auto;object-fit:contain;border-radius:12px}
+  .sc{text-align:center;padding-top:10px}
+  .sc b{display:block;font-size:20px}
+  @keyframes ssf{0%{opacity:0}2%{opacity:1}10.5%{opacity:1}12.5%{opacity:0}100%{opacity:0}}
+  @media(max-width:700px){
+    .works-grid{grid-template-columns:1fr}
+    .sw{aspect-ratio:4/5}
+    .sc b{font-size:17px}
+  }
+</style>
+
+<div class="works">
+  <div class="works-grid">
+
+    <!-- KALIWA: thumbnails with captions -->
+    <div class="sw">
+      <div class="ss" style="animation-delay:0s"><img src="images/work1.jpg" alt=""><div class="sc"><b>Robot or Human?</b></div></div>
+      <div class="ss" style="animation-delay:4s"><img src="images/work2.jpg" alt=""><div class="sc"><b>Ultimate AI Tools</b></div></div>
+      <div class="ss" style="animation-delay:8s"><img src="images/work3.jpg" alt=""><div class="sc"><b>Token 2049 Dubai</b></div></div>
+      <div class="ss" style="animation-delay:12s"><img src="images/work4.jpg" alt=""><div class="sc"><b>KODE</b></div></div>
+      <div class="ss" style="animation-delay:16s"><img src="images/work5.jpg" alt=""><div class="sc"><b>Welcome Japan</b></div></div>
+      <div class="ss" style="animation-delay:20s"><img src="images/work6.jpg" alt=""><div class="sc"><b>Seeing Signs</b></div></div>
+      <div class="ss" style="animation-delay:24s"><img src="images/work7.jpg" alt=""><div class="sc"><b>Nagbago ang Buhay sa Argentina!</b></div></div>
+      <div class="ss" style="animation-delay:28s"><img src="images/work8.jpg" alt=""><div class="sc"><b>Happy Birthday, Lj</b></div></div>
+    </div>
+
+    <!-- KANAN: invitation designs -->
+    <div class="sw">
+      <div class="ss" style="animation-delay:0s"><img src="images/invite1.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:4s"><img src="images/invite2.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:8s"><img src="images/invite3.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:12s"><img src="images/invite4.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:16s"><img src="images/invite5.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:20s"><img src="images/invite6.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:24s"><img src="images/invite7.jpg" alt=""></div>
+      <div class="ss" style="animation-delay:28s"><img src="images/invite8.jpg" alt=""></div>
+    </div>
+
+  </div>
+</div>
+<!-- ===== AUTOMATED SALES & INVENTORY TRACKER ===== -->
+<style>
+  .proj-top{padding:0 12px;background:#fff}
+  .proj-top h2{font-weight:normal;font-size:36px;line-height:1.2;margin:0;padding-top:4px}
+  .proj-top h3{font-weight:bold;font-size:36px;line-height:1.2;margin:0 0 6px}
+  .proj-body{background:#f4f2ed;padding:20px 22px 60px}
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1400px;margin:0 auto}
+  .proj-text{font-size:20px;line-height:1.45;max-width:700px}
+  .proj-text p{margin:0 0 24px}
+  .proj-text a{color:#0000ee}
+  .proj-img{text-align:center}
+  .proj-img img{max-width:100%;height:auto;display:block;margin:0 auto}
+  @media(max-width:800px){
+    .proj-grid{grid-template-columns:1fr}
+    .proj-top h2,.proj-top h3{font-size:28px}
+    .proj-text{font-size:18px}
+  }
+</style>
+
+<div class="proj-top">
+  <h2>Automated Sales &amp; Inventory Tracker</h2>
+  <h3>Personal Project</h3>
+</div>
+
+<div class="proj-body">
+  <div class="proj-grid">
+
+    <div class="proj-text">
+      <p>I developed an automated sales and inventory tracking system designed to help small business owners manage daily transactions, monitor stock levels, track expenses and payments, and calculate profits. The system features automatic calculations, sales performance reports, low-stock alerts, and a dashboard for monitoring overall business performance.</p>
+
+      <p><b>Tools:</b> WPS Spreadsheet, Microsoft Excel</p>
+
+      <p><b>Project Link:</b>
+        <a href="https://ap.wps.com/cms/docs/d/cbRaqbhooZsQTPua" target="_blank" rel="noopener">https://ap.wps.com/cms/docs/d/cbRaqbhooZsQTPua</a>
+      </p>
+    </div>
+
+    <div class="proj-img">
+      <img src="images/sales-tracker.png" alt="Business dashboard on a laptop">
+    </div>
+
+  </div>
+</div>
+<!-- ===== DAILY CALENDAR & PLANNER ===== -->
+<style>
+  .cal-section{background:#f4f2ed;padding:20px 14px 50px}
+  .cal-section h2{font-weight:normal;font-size:36px;line-height:1.2;margin:0 0 40px}
+  .cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1500px;margin:0 auto}
+  .cal-img{text-align:center}
+  .cal-img img{width:314px;max-width:100%;height:auto;display:block;margin:0 auto}
+  .cal-text{font-size:20px;line-height:1.45;max-width:720px}
+  .cal-text p{margin:0 0 24px}
+  .cal-text a{color:#0000ee}
+  @media(max-width:800px){
+    .cal-grid{grid-template-columns:1fr}
+    .cal-section h2{font-size:28px;margin-bottom:24px}
+    .cal-text{font-size:18px}
+  }
+</style>
+
+<div class="cal-section">
+  <h2>Daily Calendar &amp; Planner</h2>
+
+  <div class="cal-grid">
+
+    <div class="cal-img">
+      <img src="images/life-monitor.png" alt="Life Monitor app icon">
+    </div>
+
+    <div class="cal-text">
+      <p>I created a simple, user-friendly calendar and planning tool to help users organize daily tasks, manage schedules, and keep track of important events and activities.</p>
+
+      <p><b>Project Link:</b>
+        <a href="https://extraordinary-cassata-44d3e3.netlify.app" target="_blank" rel="noopener">https://extraordinary-cassata-44d3e3.netlify.app</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+<!-- ===== DESIGNS THAT LOOK GOOD AND DO THEIR JOB ===== -->
+<style>
+  .design-section{
+    background:
+      radial-gradient(circle at 0% 10%, rgba(200,214,194,.55), transparent 35%),
+      radial-gradient(circle at 100% 85%, rgba(200,214,194,.6), transparent 40%),
+      #f4f2ed;
+    padding:20px 45px 110px;
+  }
+  .design-inner{max-width:1040px;margin:0 auto}
+  .design-head{max-width:640px;text-align:center}
+  .design-head h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;
+    font-size:48px;
+    line-height:1.15;
+    color:#2d3e33;
+    margin:0 0 20px;
+  }
+  .design-head p{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    color:#5f7366;
+    margin:0 auto;
+    max-width:560px;
+  }
+  .design-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:42px;
+  }
+  .design-card{
+    background:#fff;
+    border:1px solid #dcdfd6;
+    border-radius:26px;
+    padding:30px 22px 26px;
+    text-align:center;
+  }
+  .design-card .num{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:bold;
+    font-size:22px;
+    color:#2d3e33;
+    margin:0 0 18px;
+  }
+  .design-card h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;
+    font-size:21px;
+    color:#2d3e33;
+    margin:0 0 12px;
+  }
+  .design-card p{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:15px;
+    line-height:1.6;
+    color:#5f7366;
+    margin:0 0 20px;
+  }
+  .design-card .tag{
+    display:inline-block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:bold;
+    font-size:13px;
+    color:#2d3e33;
+    background:#dfe5d8;
+    padding:8px 14px;
+    border-radius:999px;
+  }
+  @media(max-width:900px){
+    .design-cards{grid-template-columns:1fr 1fr}
+    .design-head h2{font-size:38px}
+  }
+  @media(max-width:560px){
+    .design-section{padding:20px 20px 70px}
+    .design-cards{grid-template-columns:1fr}
+    .design-head h2{font-size:32px}
+  }
+</style>
+
+<div class="design-section">
+  <div class="design-inner">
+
+    <div class="design-head">
+      <h2>Designs that look good and do their job</h2>
+      <p>From a single post to a full brand look, I design visuals that make your business easy to recognize and easy to trust.</p>
+    </div>
+
+    <div class="design-cards">
+
+      <div class="design-card">
+        <div class="num">01</div>
+        <h3>Social media graphics</h3>
+        <p>Posts, carousels, stories, and covers that keep your feed consistent.</p>
+        <span class="tag">Canva / Photoshop</span>
+      </div>
+
+      <div class="design-card">
+        <div class="num">02</div>
+        <h3>Branding</h3>
+        <p>Logos, color palettes, fonts, and brand kits that match across every platform.</p>
+        <span class="tag">Logo / Brand kit</span>
+      </div>
+
+      <div class="design-card">
+        <div class="num">03</div>
+        <h3>Digital products</h3>
+        <p>Ebooks, workbooks, planners, and templates that are ready to sell or share.</p>
+        <span class="tag">Ebook / Template</span>
+      </div>
+
+      <div class="design-card">
+        <div class="num">04</div>
+        <h3>Marketing materials</h3>
+        <p>Flyers, banners, ads, and presentations for launches and promotions.</p>
+        <span class="tag">Ads / Print / Slides</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ===== A CLEAR PROCESS FROM BRIEF TO FINAL FILES ===== -->
+<style>
+  .process-section{
+    background:
+      radial-gradient(circle at 100% 8%, rgba(200,214,194,.6), transparent 38%),
+      radial-gradient(circle at 0% 85%, rgba(200,214,194,.55), transparent 38%),
+      #f4f2ed;
+    padding:30px 42px 80px;
+  }
+  .process-inner{max-width:1040px;margin:0 auto}
+  .process-head{max-width:640px;text-align:center;padding-left:20px}
+  .process-head h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;
+    font-size:46px;
+    line-height:1.12;
+    color:#2d3e33;
+    margin:0 0 22px;
+  }
+  .process-head p{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    color:#5f7366;
+    margin:0;
+  }
+  .process-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:42px;
+  }
+  .process-card{
+    background:#fff;
+    border:1px solid #dcdfd6;
+    border-radius:28px;
+    padding:26px 26px 24px;
+    text-align:center;
+  }
+  .process-card .step{
+    width:40px;height:40px;
+    border-radius:50%;
+    background:#2d4435;
+    color:#fff;
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:bold;
+    font-size:17px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 14px;
+  }
+  .process-card h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;
+    font-size:21px;
+    color:#2d3e33;
+    margin:0 0 10px;
+  }
+  .process-card p{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:15px;
+    line-height:1.6;
+    color:#5f7366;
+    margin:0;
+  }
+  @media(max-width:900px){
+    .process-grid{grid-template-columns:1fr 1fr}
+    .process-head h2{font-size:38px}
+  }
+  @media(max-width:560px){
+    .process-section{padding:30px 20px 60px}
+    .process-grid{grid-template-columns:1fr}
+    .process-head{padding-left:0}
+    .process-head h2{font-size:32px}
+  }
+</style>
+
+<div class="process-section">
+  <div class="process-inner">
+
+    <div class="process-head">
+      <h2>A clear process from brief to final files</h2>
+      <p>You always know what stage your project is in and what comes next.</p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+        <div class="step">1</div>
+        <h3>Brief</h3>
+        <p>You share your goals, audience, and the look you have in mind.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="step">2</div>
+        <h3>Plan</h3>
+        <p>We agree on the formats, number of designs, and deadline.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="step">3</div>
+        <h3>Design</h3>
+        <p>I create the first drafts using your brand colors and fonts.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="step">4</div>
+        <h3>Review</h3>
+        <p>You send feedback and I revise until it feels right.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="step">5</div>
+        <h3>Deliver</h3>
+        <p>You receive final files sized for posting or printing.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="step">6</div>
+        <h3>Support</h3>
+        <p>I stay available for edits and your next requests.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ===== WHAT I BRING & THE TOOLS I USE ===== -->
+<style>
+  .skills-section{
+    background:
+      radial-gradient(circle at 0% 8%, rgba(200,214,194,.6), transparent 35%),
+      radial-gradient(circle at 100% 90%, rgba(200,214,194,.55), transparent 38%),
+      #f4f2ed;
+    padding:20px 28px 70px;
+  }
+  .skills-head{max-width:640px;text-align:center}
+  .skills-head h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:normal;font-size:42px;line-height:1.15;
+    color:#2d3e33;margin:0 0 18px;
+  }
+  .skills-head p{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:17px;line-height:1.7;color:#5f7366;margin:0;
+  }
+  .skills-label{
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:bold;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
